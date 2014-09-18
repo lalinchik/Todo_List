@@ -1,0 +1,103 @@
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    background-color: #e0e0e0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.header {
+    color: white;
+    background-color: black ;
+    line-height: 30px;
+}
+.app-name {
+    margin-left: 20px;
+    font-weight: bold;
+}
+.user-name, .logout {
+    float: right ;
+    padding: 0 20px;
+}
+a.logout {
+    color: white;
+    text-decoration: none;
+    border-left: 1px solid;
+}
+
+
+
+.content {
+    height: calc(100% - 30px);
+    width: 100%;
+    position: absolute;
+}
+.outer {
+    height: 100%;
+    width: 100%;
+    display: table;
+    position: absolute;
+}
+.list-container {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.list {
+    width: 600px;
+    border: 1px solid #4b89ff;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 6px;
+}
+.list-title {
+    line-height: 40px;
+    background-color: #4b89ff;
+    color: white;
+    border-radius: 3px 3px 0 0;
+}
+.add-item {
+    line-height: 40px;
+    background-color: lightgray;
+}
+.item {
+    line-height: 30px;
+    background-color: #fffcef;
+    border-top: 1px solid #4b89ff;
+}
+.list > div:last-of-type {
+    border-radius: 0 0 6px 6px;
+
+}
+
+
+.list > div > *  {
+    display: inline-block;
+}
+.list-title > .text-renderer {
+    width: 500px;
+}
+
+.item > .text-renderer {
+    width: 460px;
+    text-align: left;
+    margin-left: 10px;
+}
+.add-item > input[type=text] {
+    width: 460px;
+    height: 24px;
+    font-size: 16px;
+}
+input[type=button] {
+    height: 28px;
+    font-size: 16px;
+}
+
+.add-list {
+    margin-top: 25px;
+}
