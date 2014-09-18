@@ -36,8 +36,14 @@ var func = function () {
         itemDiv.innerHTML = html;
         itemDiv.classList.add("item");
         listDiv.appendChild(itemDiv);
+
+        var deleteItemButton = itemDiv.querySelector(".typcn-trash");
+        deleteItemButton.addEventListener("click", function (e){
+            listDiv.removeChild(itemDiv);
+        })
     });
 };
+
 button.addEventListener("click", func);
 
 func();
