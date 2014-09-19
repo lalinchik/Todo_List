@@ -27,8 +27,9 @@ var func = function () {
     var addTaskButton = listDiv.querySelector(".add-item > input[type=button]");
     addTaskButton.addEventListener("click", function (e) {
         var itemDiv = document.createElement("div");
+        var text = listDiv.querySelector(".new-item-text").value;
         var html = '<span class="status"><input type="checkbox"/></span> ' +
-            '<span class="text-renderer">dxfghmjk,,</span> ' +
+            '<span class="text-renderer">'+ text + '</span> ' +
             '<span class="typcn typcn-arrow-up"></span> ' +
             '<span class="typcn typcn-arrow-down"></span> ' +
             '<span class="typcn typcn-edit"></span> ' +
@@ -40,8 +41,25 @@ var func = function () {
         var deleteItemButton = itemDiv.querySelector(".typcn-trash");
         deleteItemButton.addEventListener("click", function (e){
             listDiv.removeChild(itemDiv);
-        })
+        });
+
+        var upButton = itemDiv.querySelector(".typcn-arrow-up");
+        upButton.addEventListener('click', function (e) {
+            var previous = itemDiv.previousSibling;
+            if (previous.classList.contains('item')) {
+                listDiv.insertBefore(itemDiv, previous);
+            }
+        });
+
+        var downButton = itemDiv.querySelector(".typcn-arrow-down");
+        downButton.addEventListener('click', function (e) {
+            var next = itemDiv.nextSibling;
+            if(next != null && next.classList.contains('item')) {
+                listDiv.insertBefore(next, itemDiv);
+            }
+        });
     });
+
 };
 
 button.addEventListener("click", func);
